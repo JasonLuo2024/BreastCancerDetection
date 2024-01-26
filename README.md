@@ -4,13 +4,16 @@ Lastly, to address the challenge of insufficent malignant cases and the imbalanc
 
 2.2.1 Windowing 
 In the context of DICOM images, it's common to encounter pixel values that exceed the 8-bit range (255). The process of normalizing the entire range down to 8 bits can lead to a loss of valuable information. To reduce information loss, we apply Window­ing, also known as contrast enhancement, to select a specific range of pixels from the original image before any normalization occurs, which enhances the contrast between soft and dense tissues, thereby improving the visual clarity and interpretability of the medical images. [8]
+
 ![Windowing](https://github.com/JasonLuo2024/BreastCancerDetection/assets/113136895/dc6026a3-6d3f-478e-a88e-072c828b3673)
 
 2.2.2 Abstracting regions of interest(ROI) 
 YOLOX is a supervised learning model utilized for object detection. Following the process of image windowing, we apply YOlOX to extract the regions of interest(ROI) from the breast images. 
 Abstracting regions of interest (ROI) is a widely adopted technique in medical image analysis, allowing for focused examination and processing of specific areas within an image. This approach is particularly beneficial in mammography, where accurate diagnosis and assessment rely heavily on precise extraction of regions of interest (ROis). 
+
 ![Cropping](https://github.com/JasonLuo2024/BreastCancerDetection/assets/113136895/300f2244-1be7-4c79-afa5-bc7029efd2e3)
 
 Mirroring, also referred to as Reflecting, is a common technique used in photography for creating a symmetrical version of an image by flipping it horizontally or vertically. This process involves creating a mirrored copy of an image, either horizontally or vertically. In our context, we utilize mirroring to address the challenge posed by mammography laterality and insufficent malignant cases. By converting all right breast images into left images, we simplifies the the categorization process, focusing only on the Left Craniocaudal (L-CC) and Left Mediolateral Oblique (L-MLO) view positions.
 This simplifies the classification and reduces complexities associated with lateral differences in mammographic images.
+
 ![mirror](https://github.com/JasonLuo2024/BreastCancerDetection/assets/113136895/5eb587e4-c7ba-4b1b-a041-6876006f5f1a)
